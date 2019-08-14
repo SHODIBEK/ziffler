@@ -8,8 +8,8 @@ $(document).ready(() => {
         $menu = $('#menu'),
         $header = $('header'),
         $newsSlider = $('.news-items.owl-carousel'),
-        $iProductSlider = $('.js-porduct-slider'),
-        $thumbsSlider = $('.js-product-slider-dots'),
+        $iProductSlider = $('.js-product-slider'),
+        $iProductDots = $('.js-product-slider-dots'),
         $fProductSlider = $('[data-fancybox="product-gallery"]'),
         $pDetailsShowBtn = $('.show-btn'),
         $pDetailsHideBtn = $("#hide-btn"),
@@ -133,7 +133,13 @@ $(document).ready(() => {
         });
     }
 
-    $('.js-product-slider-dots').slick({
+    $iProductSlider.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+        var i = (currentSlide ? currentSlide : 0) + 1;
+        $('.mobile-slider-info span').html('<i>' + i + '</i>' + '/' + '<font>' + slick.slideCount + '</font>');
+        console.log('<i>' + i + '</i>' + '/' + slick.slideCount)
+    });
+
+    $iProductDots.slick({
         asNavFor: ".js-porduct-slider",
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -142,15 +148,17 @@ $(document).ready(() => {
         vertical: true,
         infinite: true,
         swipeToSlide: false,
+        focusOnSelect: true,
     });
 
-    $('.js-porduct-slider').slick({
+    $iProductSlider.slick({
         asNavFor: ".js-product-slider-dots",
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         infinite: false,
-        fade: true,
+        // fade: true,
+
     });
 
     if ($window.width() >= 1024) {
@@ -161,6 +169,10 @@ $(document).ready(() => {
                 $header.removeClass("sticky");
             }
         });
+    } else {
+        setTimeout(function() {
+            $('.js-product-slider-mobile--info').fadeOut();
+        }, 3000);
     }
     var bg = $('#changeImg').data('img');
 
@@ -168,7 +180,7 @@ $(document).ready(() => {
 
         mouseenter: function() {
             var $thisSrc = $(this).data('src');
-            $('#changeImg img').attr("src", $thisSrc)
+            $('#changeImg img').attr("src", $thisSrc);
         },
         mouseleave: function() {
             $('#changeImg img').attr("src", bg);

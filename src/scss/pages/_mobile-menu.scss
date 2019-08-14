@@ -19,6 +19,7 @@
     }
     @include mobile {
         padding: 80px 20px;
+        background: $lightgrey;
     }
     &-wrap {
         display: flex;
@@ -37,6 +38,7 @@
         @include mobile {
             width: 100%;
             border: none;
+            padding: 0;
         }
     }
     &-right {
@@ -66,6 +68,7 @@
             right: 0;
             bottom: 0;
             margin: auto;
+            transition: all 0.3s ease-in-out;
         }
         @include tablet {
             width: 100%;
@@ -94,6 +97,9 @@
             font-size: 28px;
             font-weight: 400;
             text-transform: uppercase;
+            @include mobile {
+                font-size: 15px;
+            }
         }
         .social {
             li {
@@ -103,6 +109,10 @@
                 width: 30px;
                 height: 30px;
                 background-size: cover;
+                @include mobile {
+                    width: 20px;
+                    height: 20px;
+                }
             }
         }
     }
@@ -134,14 +144,21 @@
                 text-align: center;
                 color: $white;
                 transition: all 0.3s ease-in-out;
-                &.active,
-                &:hover {
-                    background: $white;
-                    color: #333;
-                    transition: all 0.3s ease-in-out;
+                @media not all and (hover: none) {
+                    &.active, &:hover {
+                        background: $white;
+                        color: #333;
+                        transition: all 0.3s ease-in-out;
+                    }
+                    &.active {
+                        pointer-events: none;
+                    }
                 }
-                &.active {
-                    pointer-events: none;
+                @include mobile {
+                    &.active {
+                        background: #fff;
+                        color: $lightgrey;
+                    }
                 }
             }
             &:first-child {
@@ -168,6 +185,9 @@
 nav {
     overflow: hidden;
     width: 459px;
+    @include mobile {
+        width: 100%;
+    }
     ul {
         li {
             position: relative;
@@ -197,18 +217,20 @@ nav {
                         height: 58px;
                     }
                 }
-                &:hover {
-                    color: #333;
-                    &:after {
-                        left: 0;
-                        opacity: 1;
-                        transition: opacity 1.5s cubic-bezier(.35, 0, 0, 1.01), left 1.5s cubic-bezier(.35, 0, 0, 1.01);
-                    }
-                    a {
-                        color: $lightgrey;
-                    }
-                    svg {
-                        fill: $lightgrey;
+                @media not all and (hover: none) {
+                    &:hover {
+                        color: #333;
+                        &:after {
+                            left: 0;
+                            opacity: 1;
+                            transition: opacity 1.5s cubic-bezier(.35, 0, 0, 1.01), left 1.5s cubic-bezier(.35, 0, 0, 1.01);
+                        }
+                        a {
+                            color: $lightgrey;
+                        }
+                        &>svg {
+                            fill: $lightgrey;
+                        }
                     }
                 }
                 @include tablet {
@@ -238,6 +260,7 @@ nav {
             a {
                 padding: 12px 0;
                 font-size: 22px;
+                line-height: 1;
                 text-transform: capitalize;
                 &::after {
                     display: none;
@@ -285,10 +308,12 @@ nav {
         fill: $white;
         transition: all 0.3s ease-in-out;
     }
-    &:hover {
-        svg {
-            fill: $lightgrey;
-            transition: all 0.3s ease-in-out;
+    @include hover {
+        &:hover {
+            svg {
+                fill: $lightgrey;
+                transition: all 0.3s ease-in-out;
+            }
         }
     }
 }

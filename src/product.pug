@@ -36,17 +36,21 @@ block content
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 16"><polygon points="8.409,2.666 -0.001,11.333 2.586,13.999 10.999,5.332 19.41,14 21.999,11.333 13.587,2.666 10.999,0 "/></svg>
                                 .js-product-slider-dots
                                     - for ( var i = 0; i < 6; i++) {
-                                        .product-details-slider-dots__item
+                                        button.product-details-slider-dots__item
                                             img(src=`images/content/product-1-${i+1}.webp` alt=`product-${i+1}`)
                                     - }
                                 .product-details-slider-dots__btn--next
                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 16"><polygon points="13.59,11.334 22,2.667 19.412,0 11,8.668 2.589,0 0,2.667 8.412,11.334 11,14 "/></svg>
-                        .js-porduct-slider
+                        .js-product-slider
                             - for ( var i = 0; i < 6; i++) {
                                 .product-details-slider__item
                                     a(href=`images/content/product-1-${i+1}.webp` data-fancybox="product-gallery")
                                         img(src=`images/content/product-1-${i+1}.webp`, alt=`product-${i+1}`)
                             - }
+                        .js-product-slider-mobile--info
+                            span Вкладка для просмотра
+                        .mobile-slider-info.js-count-slider
+                            span
                     .product-info
                         .product-info-top
                             h1.product-title
