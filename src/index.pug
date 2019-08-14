@@ -1,0 +1,106 @@
+extends pug/base
+
+append vars
+	- title = 'Главная страница'
+	- meta.description = 'Описание страницы'
+	- meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+	- link.icon = './favicon.ico'
+	- meta.formatDetection = 'telephone=no'
+	- meta.themeColor = '#000'
+	- defaultLink = 'javascript:void(0);'
+block content
+	include pages/header
+	.slider
+		.slider-items.owl-carousel
+			- for ( var i = 0; i < 4; i++ ) {
+				.slider-item(id=`slider-${i+1}`)
+					.slider-img
+						picture
+							source(srcset="images/content/image-1-mobile.jpg" media="(max-width: 960px)")
+							img(src="images/content/image-1.jpg", alt="image-1")
+					.slider-text
+						.container
+							.slider-text-wrap
+								h1
+									| Зоголовок слайдера <br> на две строки
+								p
+									| Lorem ipsum dolor sit amet, 
+									br 
+									| consectetur adipiscing elit, 
+									br 
+									| sed do eiusmod tempor 
+									br 
+									| incididunt ut labore et dolore 
+									br
+									| magna aliqua.
+			- }
+		.slider-name
+			ul.slider-name-list
+				li.slider-1.active(data="0")
+					| Galaxy S10 Red <span class="slide-progress"><i></i></span>
+				li.slider-2(data="1")
+					| QLED 2019 <span class="slide-progress"><i></i></span>
+				li.slider-3(data="2")
+					| Wind-Free <span class="slide-progress"><i></i></span>
+				li.slider-4(data="3")
+					| Galaxy UNPACKED <span class="slide-progress"><i></i></span>
+	.content
+		.row.product
+			.page-title
+				h2 Новинки
+			.product-slider
+				.product-slider-items.owl-carousel
+					- var name = ['Автоматическая стиральная машина Artel 80K141-I', "Настенный кондиционер Artel Grand Art-12HDM", "Двухкамерный холодильник Artel HD 364RWEN", "Телевизор Artel 65AU90GS (165 см)"];
+					each val,i in ['Стиральные машины', 'Кондиционеры', 'Холодильники', 'Телевизоры']
+						.product-slider-item
+							a(href="#").product-slider-img
+								img(src=`images/content/item-${i+1}.png`, alt=`item-${i+1}`)
+							.product-slider-info
+								a(href="#").product-category=val
+								a(href="#").product-name
+									| #{name[i]}
+		.row.product
+			.page-title
+				h2 
+					| Хиты продажи
+			.product-slider
+				.product-slider-items.owl-carousel
+					- var name = ['Автоматическая стиральная машина Artel 80K141-I', "Настенный кондиционер Artel Grand Art-12HDM", "Двухкамерный холодильник Artel HD 364RWEN", "Телевизор Artel 65AU90GS (165 см)"];
+					each val,i in ['Стиральные машины', 'Кондиционеры', 'Холодильники', 'Телевизоры']
+						.product-slider-item
+							a(href="#").product-slider-img
+								img(src=`images/content/item-${i+1}.png`, alt=`item-${i+1}`)
+							.product-slider-info
+								a(href="#").product-category=val
+								a(href="#").product-name
+									| #{name[i]}
+		.news
+			.container
+				.page-title
+					h2 
+						| Новости
+					a(href="#")
+						| Посмотреть все новости
+				.news-items.owl-carousel
+					a(href="#" title="Примерный зоголовок на две или болеe строки").news-item
+						img(src="images/content/news.jpg" alt="news")
+						h2
+							| Примерный зоголовок на две или болеe строки
+						.news-item-date
+							span.date
+								| 08.07.2019
+					a(href="#" title="Примерный зоголовок на две или болеe строки").news-item
+						img(src="images/content/news.jpg" alt="news")
+						h2
+							| Примерный зоголовок на одну строку
+						.news-item-date
+							span.date
+								| 08.07.2019
+					a(href="#" title="Примерный зоголовок на две или болеe строки").news-item
+						img(src="images/content/news.jpg" alt="news")
+						h2
+							| Примерный зоголовок на две или болеe строки
+						.news-item-date
+							span.date
+								| 08.07.2019
+	include pages/footer

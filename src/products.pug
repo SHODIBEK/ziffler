@@ -1,0 +1,66 @@
+extends pug/base
+
+append vars
+    - title = 'Кондиционеры'
+    - meta.description = 'Описание страницы'
+    - meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    - link.icon = './favicon.ico'
+    - meta.formatDetection = 'telephone=no'
+    - meta.themeColor = '#000'
+    - defaultLink = 'javascript:void(0);'
+    - body.classList = ['inner-page'];
+block content
+    include pages/header
+    .content
+        .container
+            .navigation
+                .navigation-title
+                    h1 Кондиционеры
+                <ul class="crumbs">
+                    <li>
+                        <a href="/" class="nav-home" title="На Главную"></a>
+                    </li>
+                    <li class="active">
+                        <a href="#" title="Кондиционеры">Кондиционеры</a>
+                    </li>
+                </ul>
+            .products
+                .row.products-items
+                    - for ( var i = 0; i < 6; i++ ) {
+                        .products-item.col-xl-4.col-lg-4.col-md-6
+                            .products-item-img
+                                a(href="#" title="AR5500, сплит-система с функцией ускоренного охлаждения, 23000 БТЕ/ч").products-item-link
+                                    img(src="images/content/air-1.webp", alt="air")
+                            .products-item-name
+                                a(href="#" title="AR5500, сплит-система с функцией ускоренного охлаждения, 23000 БТЕ/ч").products-item-link
+                                    h3 AR5500, сплит-система с функцией ускоренного охлаждения, 23000 БТЕ/ч
+                            .products-item-btn
+                                a(href="#").btn
+                                    span Подробнее
+                                a(href="#").btn.btn-buy
+                                    span Купить
+                    - }
+                <ul class="pagination">
+                    <li>
+                        <a href="#">Предыдущая</a>
+                    </li>
+                    <li>
+                        <a href="#">1</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li class="dots">
+                        <a href="">....</a>
+                    </li>
+                    <li>
+                        <a href="#">10</a>
+                    </li>
+                    <li>
+                        <a href="">Следующая</a>
+                    </li>
+                </ul>
+    include pages/footer

@@ -1,0 +1,135 @@
+.tg {
+    display: inline-block;
+    width: 22px;
+    height: 20px;
+    background: url('../images/icons/telegram.svg') no-repeat center;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background: url('../images/icons/telegram-2.svg') no-repeat center;
+        transition: all 0.3s ease-in-out;
+    }
+    &-black {
+        display: inline-block;
+        width: 22px;
+        height: 20px;
+        background: url('../images/icons/telegram-black.svg') no-repeat center;
+    }
+}
+
+.fb {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/icons/fb.svg') no-repeat center;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background: url('../images/icons/fb-2.svg') no-repeat center;
+        transition: all 0.3s ease-in-out;
+    }
+    &-black {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url('../images/icons/fb-black.svg') no-repeat center;
+    }
+}
+
+.instagram {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/icons/inst.svg') no-repeat center;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background: url('../images/icons/inst-2.svg') no-repeat center;
+        transition: all 0.3s ease-in-out;
+    }
+    &-black {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url('../images/icons/inst-black.svg') no-repeat center;
+    }
+}
+
+.nav-home {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('../images/icons/home.svg') no-repeat center;
+}
+
+.ico-down {
+    position: relative;
+    &::after {
+        content: "";
+        display: inline-block;
+        margin-top: -4px;
+        margin-left: 7px;
+        width: 13px;
+        height: 8px;
+        vertical-align: middle;
+        background-image: url('../images/icons/arw-down-black.svg');
+        background-repeat: no-repeat;
+    }
+}
+
+.ico-up {
+    position: relative;
+    &::after {
+        content: "";
+        display: inline-block;
+        margin-top: -4px;
+        margin-left: 7px;
+        width: 13px;
+        height: 8px;
+        vertical-align: middle;
+        background-image: url('../images/icons/arw-up-black.svg');
+        background-repeat: no-repeat;
+    }
+}
+
+.phone {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    svg {
+        fill: #fff;
+    }
+}
+
+.location {
+    display: inline-block;
+    width: 16px;
+    height: 19px;
+    svg  {
+        fill: $white;
+    }
+}
+
+.download {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    transition: all 0.3s ease-in-out;
+    svg {
+        display: block;
+        width: 16px;
+        height: 16px;
+        fill: white;
+        transition: all 1.5s cubic-bezier(.35, 0, 0, 1.01);
+    }
+}
+
+.download-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    svg {
+        display: block;
+        width: 16px;
+        height: 16px;
+        fill: $black;
+        transition: all 1.5s cubic-bezier(.35, 0, 0, 1.01);
+    }
+}

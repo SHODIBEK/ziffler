@@ -1,0 +1,123 @@
+extends pug/base
+
+append vars
+    - title = 'AR9500, сплит-система с технологией Wind-Free, 12000 БТЕ/ч'
+    - meta.description = 'Описание страницы'
+    - meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    - link.icon = './favicon.ico'
+    - meta.formatDetection = 'telephone=no'
+    - meta.themeColor = '#000'
+    - defaultLink = 'javascript:void(0);'
+    - body.classList = ['inner-page'];
+block content
+    include pages/header
+    .content
+        .container
+            .navigation
+                .navigation-title
+                    h1 AR9500, сплит-система с технологией Wind-Free, 12000 БТЕ/ч
+                <ul class="crumbs">
+                    <li>
+                        <a href="/" class="nav-home" title="На Главную"></a>
+                    </li>
+                    <li>
+                        <a href="#" title="Кондиционеры">Кондиционеры</a>
+                    </li>
+                    <li class="active">
+                        <a href="#" title="AR9500, сплит-система с технологией Wind-Free, 12000 БТЕ/ч">AR9500, сплит-система с технологией Wind-Free, 12000 БТЕ/ч</a>
+                    </li>
+                </ul>
+            .product
+                .product-details
+                    .product-details-slider
+                        .product-details-slider-dots
+                            .product-details-slider-dots__btn
+                                .product-details-slider-dots__btn--prev
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 16"><polygon points="8.409,2.666 -0.001,11.333 2.586,13.999 10.999,5.332 19.41,14 21.999,11.333 13.587,2.666 10.999,0 "/></svg>
+                                .js-product-slider-dots
+                                    - for ( var i = 0; i < 6; i++) {
+                                        .product-details-slider-dots__item
+                                            img(src=`images/content/product-1-${i+1}.webp` alt=`product-${i+1}`)
+                                    - }
+                                .product-details-slider-dots__btn--next
+                                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 16"><polygon points="13.59,11.334 22,2.667 19.412,0 11,8.668 2.589,0 0,2.667 8.412,11.334 11,14 "/></svg>
+                        .js-porduct-slider
+                            - for ( var i = 0; i < 6; i++) {
+                                .product-details-slider__item
+                                    a(href=`images/content/product-1-${i+1}.webp` data-fancybox="product-gallery")
+                                        img(src=`images/content/product-1-${i+1}.webp`, alt=`product-${i+1}`)
+                            - }
+                    .product-info
+                        .product-info-top
+                            h1.product-title
+                                | AR9500, сплит-система с технологией Wind-Free, 12000 БТЕ/ч
+                            strong.product-serial
+                                |  AR12MSPXBWKNER
+                        .product-info__list
+                            ul
+                                li
+                                    | Безветренное охлаждение Wind-Free
+                                li
+                                    | Управление по Wi-Fi
+                                li
+                                    | Фильтр тонкой очистки
+                        .product-details__info-btn
+                            h4 Инструкция по использованию
+                            a(href="#" title="170509_ER_WIND_FREE_INV_R-410A_IBIM_RU_DB68-06746A-01.pdf").btn-download
+                                span.download-icon
+                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 8V12H2V8H0V12V14H2H12H14V12V8H12Z"/>
+                                        <path d="M7 10.5L11 6.5H8V0H6V6.5H3L7 10.5Z"/>
+                                    </svg>
+                                | Cкачать
+                                <span class="filesize-counter">[29 MB]</span>
+                .product-specs
+                    .product-specs__wrap
+                        ul.product-specs__list
+                            - var scr = ['до 25 м2', '2.50 кВт', '3.2 кВт', '37/19 дБА',]
+                            each val,i in ['Рекомендованная площадь', 'Мощность охлаждения', 'Мощность обогрева', 'Уровень шума (внутренний блок)']
+                                li
+                                    span.product-specs__title(title=`${scr[i]}`)
+                                        | #{scr[i]}
+                                    span.product-specs__desc(title=`${val}`)
+                                        | #{val}
+                .product-specs__btn
+                    a(href=`${defaultLink}`).ico-down.show-btn
+                        | Показать все характеристики
+                .product-specs__details-wrap#product-details
+                    ul.product-specs__details-lists
+                        - var desc = ['11 942 БТЕ/ч', '11 942 БТЕ/ч', '4436-13649 БТЕ/ч', '3 753-16 378 БТЕ/ч', '3.5 кВт', '3.5 кВт', 'от 25 до 30 м2', '38/19 дБА', '46 дБА', ]
+                        each val,i in ['Ёмкость', 'Уровень шума']
+                            li
+                                span.product-specs__details-title
+                                    | #{val}
+                                ul.product-specs__details-list
+                                    each val,i in ['Холодопроизводительность (БТЕ/ч)', 'Производительность (Нагрев, БТЕ/ч)', 'Производительность (Система охлаждения, Мин. - Макс.)', 'Производительность (Нагрев, Мин.-Макс.)', 'Производительность (Система охлаждения, кВт)', 'Производительность (Нагрев, кВт)', 'Рекомендованная площадь',]
+                                        li
+                                            p
+                                                | #{val}
+                                            span
+                                                | #{desc[i]}
+                    .product-specs__details-btn
+                        a(href=`${defaultLink}`).ico-up.hide-btn#hide-btn
+                            | Скрыть все характеристики
+                .product-other
+                    .product-other__title
+                        h1
+                            | Похожие продукты
+                    .products-items.owl-carousel
+                        - for ( var i = 0; i < 4; i++ ) {
+                            .products-item.col-xl-4
+                                .products-item-img
+                                    a(href="#" title="AR5500, сплит-система с функцией ускоренного охлаждения, 23000 БТЕ/ч").products-item-link
+                                        img(src="images/content/air-1.webp", alt="air")
+                                .products-item-name
+                                    a(href="#" title="AR5500, сплит-система с функцией ускоренного охлаждения, 23000 БТЕ/ч").products-item-link
+                                        h3 AR5500, сплит-система с функцией ускоренного охлаждения, 23000 БТЕ/ч
+                                .products-item-btn
+                                    a(href="#").btn
+                                        span Подробнее
+                                    a(href="#").btn.btn-buy
+                                        span Купить
+                        - }
+    include pages/footer

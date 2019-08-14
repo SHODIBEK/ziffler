@@ -1,0 +1,39 @@
+extends pug/base
+
+append vars
+    - title = 'Новости'
+    - meta.description = 'Описание страницы'
+    - meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    - link.icon = './favicon.ico'
+    - meta.formatDetection = 'telephone=no'
+    - meta.themeColor = '#000'
+    - defaultLink = 'javascript:void(0);'
+    - body.classList = ['inner-page'];
+block content
+    include pages/header
+    .content
+        .container
+            .inner-news
+                .inner-news-items
+                    a(href="#" title="Примерный зоголовок на две или болеe строки").inner-news-item
+                        img(src="images/content/news.jpg" alt="news")
+                        h2
+                            | Примерный зоголовок на две или болеe строки
+                        .news-item-date
+                            span.date
+                                | 08.07.2019
+                    a(href="#" title="Примерный зоголовок на две или болеe строки").inner-news-item
+                        img(src="images/content/news.jpg" alt="news")
+                        h2
+                            | Примерный зоголовок на одну строку
+                        .news-item-date
+                            span.date
+                                | 08.07.2019
+                    a(href="#" title="Примерный зоголовок на две или болеe строки").inner-news-item
+                        img(src="images/content/news.jpg" alt="news")
+                        h2
+                            | Примерный зоголовок на две или болеe строки
+                        .news-item-date
+                            span.date
+                                | 08.07.2019
+    include pages/footer

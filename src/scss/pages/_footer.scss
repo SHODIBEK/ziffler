@@ -1,0 +1,91 @@
+footer {
+    padding: 40px 0;
+    background-color: $lightgrey;
+    a {
+        display: inline-block;
+    }
+}
+
+.footer {
+    &-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        .download {
+            margin-right: 10px;
+        }
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+        }
+        a {
+            margin-bottom: 20px;
+        }
+        .btn-white {
+            margin-bottom: 0;
+        }
+    }
+    &-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-gap: 50px;
+        @include tablet {
+            grid-gap: 30px;
+        }
+    }
+    &-item {}
+    &-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    &-list {
+        li {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            & > a {
+                position: relative;
+                font-size: 16px;
+                font-weight: 300;
+                color: #fff;
+                text-decoration: none;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background: #fff;
+                    transition: all 0.3s ease-in-out;
+                }
+                &:hover {
+                    &::after {
+                        width: 100%;
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+        margin: 0 10px 0 0;
+        &:last-child {
+            margin-right: 0;
+        }
+        a {
+            &::after {
+                display:none;
+            }
+        }
+    }
+}

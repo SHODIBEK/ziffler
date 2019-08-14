@@ -1,0 +1,73 @@
+// stylelint-disable no-empty-source
+@font-face {
+    font-family: Merel;
+    src: url(../fonts/merel/merel.woff) format('woff');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Merel;
+    src: url(../fonts/merel/merel-light.woff) format('woff');
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Merel;
+    src: url(../fonts/merel/merel-medium.woff) format('woff');
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Merel;
+    src: url(../fonts/merel/merel-thin.woff) format('woff');
+    font-weight: 100;
+    font-style: normal
+}
+
+@font-face {
+    font-family: StockmannSans;
+    font-display: swap;
+    src: url(../fonts/StockmannSans/StockmannSans-RegularItalic.eot);
+    src: url(../fonts/StockmannSans/StockmannSans-RegularItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/StockmannSans/StockmannSans-RegularItalic.woff2) format("woff2"), url(../fonts/StockmannSans/StockmannSans-RegularItalic.woff) format("woff"), url(../fonts/StockmannSans/StockmannSans-RegularItalic.ttf) format("truetype");
+    font-weight: 400;
+    font-style: italic
+}
+
+@font-face {
+    font-family: StockmannSans;
+    font-display: swap;
+    src: url(../fonts/StockmannSans/StockmannSans-Bold.eot);
+    src: url(../fonts/StockmannSans/StockmannSans-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/StockmannSans/StockmannSans-Bold.woff2) format("woff2"), url(../fonts/StockmannSans/StockmannSans-Bold.woff) format("woff"), url(../fonts/StockmannSans/StockmannSans-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: StockmannSans;
+    font-display: swap;
+    src: url(../fonts/StockmannSans/StockmannSans-Light.eot);
+    src: url(../fonts/StockmannSans/StockmannSans-Light.eot?#iefix) format("embedded-opentype"), url(../fonts/StockmannSans/StockmannSans-Light.woff2) format("woff2"), url(../fonts/StockmannSans/StockmannSans-Light.woff) format("woff"), url(../fonts/StockmannSans/StockmannSans-Light.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: StockmannSans;
+    font-display: swap;
+    src: url(../fonts/StockmannSans/StockmannSans-LightItalic.eot);
+    src: url(../fonts/StockmannSans/StockmannSans-LightItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/StockmannSans/StockmannSans-LightItalic.woff2) format("woff2"), url(../fonts/StockmannSans/StockmannSans-LightItalic.woff) format("woff"), url(../fonts/StockmannSans/StockmannSans-LightItalic.ttf) format("truetype");
+    font-weight: 300;
+    font-style: italic
+}
+
+@font-face {
+    font-family: StockmannSans;
+    font-display: swap;
+    src: url(../fonts/StockmannSans/StockmannSans-Regular.eot);
+    src: url(../fonts/StockmannSans/StockmannSans-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/StockmannSans/StockmannSans-Regular.woff2) format("woff2"), url(../fonts/StockmannSans/StockmannSans-Regular.woff) format("woff"), url(../fonts/StockmannSans/StockmannSans-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
