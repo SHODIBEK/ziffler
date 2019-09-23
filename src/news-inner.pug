@@ -1,0 +1,43 @@
+extends pug/base
+
+append vars
+    - title = 'Примерный зоголовок на две или болеe строки'
+    - meta.description = 'Описание страницы'
+    - meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    - link.icon = './favicon.ico'
+    - meta.formatDetection = 'telephone=no'
+    - meta.themeColor = '#000'
+    - defaultLink = 'javascript:void(0);'
+    - body.classList = ['inner-page'];
+block content
+    include pages/header
+    .content
+        .container
+            .navigation
+                .navigation-title
+                    h1 Новости
+                <ul class="crumbs">
+                    <li>
+                        <a href="/" class="nav-home" title="На Главную"></a>
+                    </li>
+                    <li>
+                        <a href="#" title="Новости">Новости</a>
+                    </li>
+                    <li class="active">
+                        <a href="#" title="Примерный зоголовок на две или болеe строки">Примерный зоголовок на две или болеe строки</a>
+                    </li>
+                </ul>
+            .inner-news
+                .default-section
+                    span.date
+                        | 08.07.2019
+                    img(src="images/content/news.jpg" alt="news" style="margin-right: 15px; float:left;")
+                    h1
+                        | Примерный зоголовок на две или болеe строки
+                    p
+                        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis aliquam repellendus in eos deleniti quam blanditiis corporis esse obcaecati facilis, nam aliquid minima saepe, quae sapiente dolores ipsum cumque reprehenderit?Quaerat minima doloribus iste cum impedit voluptas voluptates, nam optio est fuga consequuntur blanditiis ipsam eligendi soluta doloremque saepe a! Tenetur voluptate dignissimos minima commodi nobis ipsum esse saepe recusandae!Aspernatur est soluta vero incidunt, id laboriosam atque tempore animi possimus quae quibusdam rem eveniet fugiat itaque impedit vitae blanditiis repellendus sequi magnam porro laborum aperiam ipsam doloremque. Totam, atque?Voluptate tempora eligendi reprehenderit maiores odit molestiae neque ea quis ipsam quod veritatis aspernatur, iure esse nemo eaque dolores blanditiis! Accusantium fugit officiis voluptates repellendus reiciendis? Laboriosam doloremque aspernatur illum.Quo velit, sed quam optio minus sequi, neque dignissimos facilis impedit ducimus soluta autem natus architecto, accusamus debitis cum tempore. Provident ea dolor accusantium nulla illum perspiciatis recusandae nobis fugiat!Cum sint saepe sed omnis ut ad ratione veniam voluptates laborum consequatur consectetur, ipsa inventore, doloribus asperiores? Numquam rerum nam ad est dicta eius obcaecati minus eum, perferendis, natus reprehenderit!Minima distinctio odio magni? Nulla iste placeat velit dignissimos? Asperiores magni, quae reprehenderit cupiditate voluptas repellat neque facere deleniti laudantium delectus accusamus, deserunt ex aperiam necessitatibus, alias praesentium fugiat inventore?Unde ullam porro non eius quae suscipit nihil quam, eligendi in quibusdam adipisci ducimus nesciunt doloribus cum nemo fugiat, quas enim? Magni molestiae cumque ipsam eveniet quos repudiandae mollitia consequatur.Animi eum quibusdam veritatis ad ipsa ex, laudantium vero amet alias non aut voluptatem, quis omnis voluptates quod praesentium cupiditate facere officia neque illo, recusandae saepe? Quas consequatur et ratione?Quibusdam consequuntur at, fugiat quidem omnis architecto et illo molestias natus nam voluptatem! Architecto, laudantium, illo saepe repellat rerum quibusdam laborum nemo, nobis non quidem ducimus! Accusantium recusandae tempora quod!
+                    p
+                        | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam sint inventore mollitia animi natus hic excepturi alias non officiis. Sit necessitatibus ex tenetur exercitationem. Eum temporibus optio dolor excepturi tenetur.
+                    p
+                        | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto saepe voluptatem sint alias earum accusamus et laborum similique. Est eum illo sit omnis pariatur quibusdam ut quas esse libero quaerat.
+    include pages/footer

@@ -46,13 +46,12 @@ footer {
             &:last-child {
                 margin-bottom: 0;
             }
-            & > a {
+            &>a {
                 position: relative;
                 font-size: 16px;
                 font-weight: 300;
                 color: #fff;
                 text-decoration: none;
-
                 &::after {
                     content: "";
                     position: absolute;
@@ -63,10 +62,12 @@ footer {
                     background: #fff;
                     transition: all 0.3s ease-in-out;
                 }
-                &:hover {
-                    &::after {
-                        width: 100%;
-                        transition: all 0.3s ease-in-out;
+                @include hover {
+                    &:hover {
+                        &::after {
+                            width: 100%;
+                            transition: all 0.3s ease-in-out;
+                        }
                     }
                 }
             }
@@ -84,7 +85,7 @@ footer {
         }
         a {
             &::after {
-                display:none;
+                display: none;
             }
         }
     }

@@ -1,5 +1,13 @@
 import './vendor';
 
+window.onload = function() {
+    let preloader = document.getElementById('preloader');
+    preloader.classList.add('loaded');
+    setTimeout(function() {
+        preloader.style.display = "none";
+    }, 2000);
+};
+
 $(document).ready(() => {
     var $window = $(window),
         topSlider = $('.slider-items'),
@@ -14,7 +22,8 @@ $(document).ready(() => {
         $pDetailsShowBtn = $('.show-btn'),
         $pDetailsHideBtn = $("#hide-btn"),
         $otherSlider = $('.products-items.owl-carousel'),
-        $phone = $('#phone');
+        $phone = $('#phone'),
+        $btn = $('.buttonRectangle');
 
 
     // header slider start
@@ -33,10 +42,13 @@ $(document).ready(() => {
                 owl = topSlider.owlCarousel({
                     items: 1,
                     autoplay: false,
+                    autoHeight: true,
                     loop: true,
+                    mouseDrag: false,
                     autoplaySpeed: 2000,
                     navSpeed: 2000,
-                    dragEndSpeed: 2000,
+                    animateOut: 'fadeOut',
+                    animateIn: 'fadeIn',
                     autoplayHoverPause: false,
                     dotsContainer: '.slider-name-list',
                     navText: ['<svg xmlns="http://www.w3.org/2000/svg" width="422.562" height="799.781" viewBox="0 0 422.562 799.781"><path d="M54.978,400.089L416.119,38.9A22.635,22.635,0,0,0,384.11,6.883L6.882,384.167a22.561,22.561,0,0,0,0,32.013L384.11,793.3a22.77,22.77,0,0,0,15.921,6.7,22.074,22.074,0,0,0,15.92-6.7,22.561,22.561,0,0,0,0-32.013Z" transform="translate(-0.219 -0.219)"/></svg>', '<svg xmlns="http://www.w3.org/2000/svg" width="423" height="800" viewBox="0 0 423 800"><path d="M368.184,400.02L6.669,761.312a22.65,22.65,0,0,0,32.042,32.022L416.33,415.947a22.554,22.554,0,0,0,0-32.022L38.711,6.706A22.8,22.8,0,0,0,22.773,0,22.106,22.106,0,0,0,6.837,6.706a22.555,22.555,0,0,0,0,32.021Z"/></svg>'],
@@ -50,10 +62,10 @@ $(document).ready(() => {
                             dotsContainer: false,
                         },
                         768: {
-                            dots: false,
+                            dots: true,
                             nav: true,
                         }
-                    }
+                    },
                 });
 
                 $('.owl-next').on('click', function() {
@@ -136,17 +148,16 @@ $(document).ready(() => {
     $iProductSlider.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
         var i = (currentSlide ? currentSlide : 0) + 1;
         $('.mobile-slider-info span').html('<i>' + i + '</i>' + '/' + '<font>' + slick.slideCount + '</font>');
-        console.log('<i>' + i + '</i>' + '/' + slick.slideCount)
     });
 
     $iProductDots.slick({
-        asNavFor: ".js-porduct-slider",
+        asNavFor: ".js-product-slider",
         slidesToShow: 3,
         slidesToScroll: 1,
         prevArrow: '.product-details-slider-dots__btn--prev',
         nextArrow: '.product-details-slider-dots__btn--next',
         vertical: true,
-        infinite: true,
+        infinite: false,
         swipeToSlide: false,
         focusOnSelect: true,
     });
@@ -157,8 +168,6 @@ $(document).ready(() => {
         slidesToScroll: 1,
         arrows: false,
         infinite: false,
-        // fade: true,
-
     });
 
     if ($window.width() >= 1024) {
@@ -194,6 +203,7 @@ $(document).ready(() => {
         } else if ($(window).scrollTop() > 100 && !$header.hasClass('is-open')) {
             $header.addClass('sticky')
         }
+        $('body').toggleClass('overflow');
     });
 
     $('.submenu-toggle').on('click', function() {
@@ -302,38 +312,6 @@ $(document).ready(() => {
         }
     });
 
-    $(function() {
-        $('#uzbekistan-map').JSMaps({
-            "responsive": true,
-            map: 'uzbekistan',
-            selectElement: true,
-            strokeColor: '#dddddd',
-            textPosition: 'bottom',
-            displayPreloader: false,
-            "pinSize": 10,
-            "disableTooltip": false,
-            selectElementDevices: ['mobile', 'tablet'],
-            selectElementDefaultText: $('#uzbekistan-map').data('txt'),
-            onStateClick: function(data) {
-                var circle = $('circle');
-                var iframeSrc = data.iframe;
-                var mapsLink = data.mapsLink;
-                var clickCityName = data.name;
-                var xPos = data.xPos;
-                var yPos = data.yPos;
-                circle.attr('cx', xPos);
-                circle.attr('cy', yPos);
-                circle.addClass('move');
-                $("#iframeSrc").attr('src', iframeSrc);
-                $("#mapsLink").attr('href', mapsLink);
-                // $.getJSON('../json/uzbekistan.json', function(data) {
-                //     var pinsName = data.pins[0];
-                //     data.pins[0].name = clickCityName;
-                // });
-            },
-        });
-    });
-
     let onlyNumber = function onlyNumber(e) {
         let key = e.charCode || e.keyCode || 0;
 
@@ -351,4 +329,27 @@ $(document).ready(() => {
     };
 
     $phone.keydown(onlyNumber);
+
+    var $btnWidth = $btn.innerWidth();
+
+    $btn.mouseenter(function() {
+        $(this).children('.buttonRectangle__hover').css({
+            "right": "auto",
+            "left": "0",
+        }).animate({ "width": "100%" }, 200);
+        $(this).children('.buttonRectangle__hover').children().css({
+            "right": "auto",
+            "left": "0",
+        }).animate({ "width": $btnWidth, }, 1);
+    });
+    $btn.mouseleave(function(e) {
+        $(this).children('.buttonRectangle__hover').css({
+            "right": "0px",
+            "left": "auto",
+        }).animate({ "width": "0" }, 300)
+        $(this).children('.buttonRectangle__hover').children().css({
+            "right": "0px",
+            "left": "auto",
+        }).animate({ "width": $btnWidth, }, 1);
+    });
 });

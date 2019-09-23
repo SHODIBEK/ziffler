@@ -29,7 +29,7 @@
     }
     &-left {
         width: 530px;
-        background: #333;
+        background: $lightgrey;
         padding: 100px 20px;
         border-right: 1px solid $grey;
         @include tablet {
@@ -79,13 +79,18 @@
         color: $white;
         text-decoration: none;
         transition: all 0.3s ease-in-out;
-        &:hover {
-            transition: all 0.3s ease-in-out;
+        @include hover {
+            &:hover {
+                transition: all 0.3s ease-in-out;
+            }
         }
     }
     nav {
         padding-bottom: 50px;
         border-bottom: 1px solid $grey;
+        @include mobile {
+            padding-bottom: 30px;
+        }
     }
     &-social {
         margin-left: 30px;
@@ -147,7 +152,7 @@
                 @media not all and (hover: none) {
                     &.active, &:hover {
                         background: $white;
-                        color: #333;
+                        color: $lightgrey;
                         transition: all 0.3s ease-in-out;
                     }
                     &.active {
@@ -219,7 +224,7 @@ nav {
                 }
                 @media not all and (hover: none) {
                     &:hover {
-                        color: #333;
+                        color: $lightgrey;
                         &:after {
                             left: 0;
                             opacity: 1;
@@ -246,6 +251,13 @@ nav {
             cursor: pointer;
             transition: none;
             z-index: 2;
+            &:hover {
+                .menu-toggle-icon {
+                    svg {
+                        fill: $lightgrey;
+                    }
+                }
+            }
         }
     }
     .submenu {
@@ -258,6 +270,8 @@ nav {
         li {
             margin-left: 20px;
             a {
+                display: inline-block;
+                position: relative;
                 padding: 12px 0;
                 font-size: 22px;
                 line-height: 1;
@@ -265,8 +279,22 @@ nav {
                 &::after {
                     display: none;
                 }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 1px;
+                    background: $white;
+                    transition: all 0.3s ease-in-out;
+                }
                 &:hover {
-                    color: #fff
+                    color: #fff;
+                    &::before {
+                        width: 100%;
+                        transition: all 0.3s ease-in-out;
+                    }
                 }
                 @include tablet {
                     font-size: 20px;
@@ -297,6 +325,9 @@ nav {
     overflow: hidden;
     @include desktop {
         height: 58px;
+    }
+    @include mobile {
+        height: 50px;
     }
     svg {
         position: absolute;

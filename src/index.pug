@@ -13,7 +13,7 @@ block content
 	.slider
 		.slider-items.owl-carousel
 			- for ( var i = 0; i < 4; i++ ) {
-				.slider-item(id=`slider-${i+1}`)
+				.slider-item
 					.slider-img
 						picture
 							source(srcset="images/content/image-1-mobile.jpg" media="(max-width: 960px)")
@@ -36,14 +36,14 @@ block content
 			- }
 		.slider-name
 			ul.slider-name-list
-				li.slider-1.active(data="0")
-					| Galaxy S10 Red <span class="slide-progress"><i></i></span>
-				li.slider-2(data="1")
-					| QLED 2019 <span class="slide-progress"><i></i></span>
-				li.slider-3(data="2")
-					| Wind-Free <span class="slide-progress"><i></i></span>
-				li.slider-4(data="3")
-					| Galaxy UNPACKED <span class="slide-progress"><i></i></span>
+				li.slider-1.active
+					<span class="slide-progress"><i></i></span>
+				li.slider-2
+					<span class="slide-progress"><i></i></span>
+				li.slider-3
+					<span class="slide-progress"><i></i></span>
+				li.slider-4
+					<span class="slide-progress"><i></i></span>
 	.content
 		.row.product
 			.page-title
@@ -83,24 +83,28 @@ block content
 						| Посмотреть все новости
 				.news-items.owl-carousel
 					a(href="#" title="Примерный зоголовок на две или болеe строки").news-item
-						img(src="images/content/news.jpg" alt="news")
+						span.news-item_img
+							img(src="images/content/news.jpg" alt="news")
 						h2
 							| Примерный зоголовок на две или болеe строки
 						.news-item-date
 							span.date
 								| 08.07.2019
 					a(href="#" title="Примерный зоголовок на две или болеe строки").news-item
-						img(src="images/content/news.jpg" alt="news")
+						span.news-item_img
+							img(src="images/content/news.jpg" alt="news")
 						h2
 							| Примерный зоголовок на одну строку
 						.news-item-date
 							span.date
 								| 08.07.2019
 					a(href="#" title="Примерный зоголовок на две или болеe строки").news-item
-						img(src="images/content/news.jpg" alt="news")
+						span.news-item_img
+							img(src="images/content/news.jpg" alt="news")
 						h2
 							| Примерный зоголовок на две или болеe строки
 						.news-item-date
 							span.date
 								| 08.07.2019
 	include pages/footer
+	include pages/preloader

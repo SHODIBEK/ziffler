@@ -33,14 +33,14 @@ block content
                         .product-details-slider-dots
                             .product-details-slider-dots__btn
                                 .product-details-slider-dots__btn--prev
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 16"><polygon points="8.409,2.666 -0.001,11.333 2.586,13.999 10.999,5.332 19.41,14 21.999,11.333 13.587,2.666 10.999,0 "/></svg>
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 16"><polygon points="8.409,2.666 -0.001,11.333 2.586,13.999 10.999,5.332 19.41,14 21.999,11.333 13.587,2.666 10.999,0 "/></svg>
                                 .js-product-slider-dots
                                     - for ( var i = 0; i < 6; i++) {
                                         button.product-details-slider-dots__item
                                             img(src=`images/content/product-1-${i+1}.webp` alt=`product-${i+1}`)
                                     - }
                                 .product-details-slider-dots__btn--next
-                                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 16"><polygon points="13.59,11.334 22,2.667 19.412,0 11,8.668 2.589,0 0,2.667 8.412,11.334 11,14 "/></svg>
+                                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 16"><polygon points="13.59,11.334 22,2.667 19.412,0 11,8.668 2.589,0 0,2.667 8.412,11.334 11,14 "/></svg>
                         .js-product-slider
                             - for ( var i = 0; i < 6; i++) {
                                 .product-details-slider__item
@@ -119,9 +119,17 @@ block content
                                     a(href="#" title="AR5500, сплит-система с функцией ускоренного охлаждения, 23000 БТЕ/ч").products-item-link
                                         h3 AR5500, сплит-система с функцией ускоренного охлаждения, 23000 БТЕ/ч
                                 .products-item-btn
-                                    a(href="#").btn
-                                        span Подробнее
-                                    a(href="#").btn.btn-buy
-                                        span Купить
+                                    <a href="./product.html" class="buttonRectangle">
+                                        <span class="buttonRectangle__text">Подробнее</span>
+                                        <span class="buttonRectangle__hover">
+                                            <span class="buttonRectangle__text">Подробнее</span>
+                                        </span>
+                                    </a>
+                                    <a href="#" class="buttonRectangle buttonRectangle-buy">
+                                        <span class="buttonRectangle__text">Купить</span>
+                                        <span class="buttonRectangle__hover">
+                                            <span class="buttonRectangle__text">Купить</span>
+                                        </span>
+                                    </a>
                         - }
     include pages/footer
